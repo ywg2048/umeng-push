@@ -106,8 +106,8 @@ func (n *Notification) SetNotificationType(t string) *Notification {
 	return n
 }
 
-func (n *Notification) SetMiActivity(miActivity string) *Notification {
-	n.MiActivity = miActivity
+func (n *Notification) SetMiPush(miPush string) *Notification {
+	n.MiPush = miPush
 	return n
 }
 
