@@ -35,7 +35,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/yzchan/umeng-go/v2/push"
+	"github.com/ywg2048/umeng-push/push"
 )
 
 func main() {
