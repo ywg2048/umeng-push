@@ -30,6 +30,7 @@ type Notification struct {
 	ReceiptUrl     string      `json:"receipt_url,omitempty"`     // U-Push Pro 回执地址 最大长度256字节。
 	ReceiptType    string      `json:"receipt_type,omitempty"`    // U-Push Pro 回执类型 1：送达回执；2：点击回执；3：送达和点击/忽略回执。默认为3
 	TemplateName   string      `json:"template_name,omitempty"`
+	MiActivity     string      `json:"mi_activity"` //小米推送
 }
 
 func (n *Notification) SetAppKey(key string) {
@@ -101,5 +102,10 @@ func (n *Notification) SetReceipt(url string, rType string) *Notification {
 
 func (n *Notification) SetNotificationType(t string) *Notification {
 	n.Type = t
+	return n
+}
+
+func (n *Notification) SetMiActivity(miActivity string) *Notification {
+	n.MiActivity = miActivity
 	return n
 }
