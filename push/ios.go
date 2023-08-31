@@ -1,7 +1,7 @@
 package push
 
 import (
-	"github.com/yzchan/umeng-go/v2/push/notification"
+	"github.com/ywg2048/umeng-push/push/notification"
 )
 
 type IOSRequest struct {
