@@ -44,12 +44,14 @@ func UnsetProxy() {
 type Umeng struct {
 	Android *Client
 	IOS     *Client
+	Harmony *Client
 }
 
 func NewUmeng() *Umeng {
 	return &Umeng{
 		Android: &Client{Platform: Android},
 		IOS:     &Client{Platform: IOS},
+		Harmony: &Client{Platform: Harmony},
 	}
 }
 
@@ -65,9 +67,16 @@ func (u *Umeng) InitIOS(appkey string, secret string) *Umeng {
 	return u
 }
 
+func (u *Umeng) InitHarmony(appkey string, secret string) *Umeng {
+	u.Harmony.AppKey = appkey
+	u.Harmony.MasterSecret = secret
+	return u
+}
+
 func (u *Umeng) Debug(debug bool) *Umeng {
 	u.Android.Debug = debug
 	u.IOS.Debug = debug
+	u.Harmony.Debug = debug
 	return u
 }
 
@@ -77,8 +86,9 @@ func (u *Umeng) GetClient(platform string) *Client {
 		return u.IOS
 	} else if platform == Android {
 		return u.Android
+	} else {
+		return u.Harmony
 	}
-	return &Client{}
 }
 
 func (u *Umeng) UseProxy(addr string) {
