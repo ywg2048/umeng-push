@@ -28,6 +28,7 @@ const (
 
 	IOS     string = "ios"
 	Android string = "android"
+	Harmony string = "harmony"
 )
 
 var Proxy string
